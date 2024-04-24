@@ -12,8 +12,8 @@ public class WeatherViewModel extends ViewModel {
 
     private final GetWeatherDataUseCase getWeatherDataUseCase;
 
-    private MutableLiveData<WeatherResponse> weatherData = new MutableLiveData<>();
-    private MutableLiveData<String> errorMessage = new MutableLiveData<>();
+    private final MutableLiveData<WeatherResponse> weatherData = new MutableLiveData<>();
+    private final MutableLiveData<String> errorMessage = new MutableLiveData<>();
 
 
     public WeatherViewModel(GetWeatherDataUseCase getWeatherDataUseCase) {

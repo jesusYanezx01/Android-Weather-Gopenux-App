@@ -2,7 +2,6 @@ package com.example.androidopenweathergopenux.presentation.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     private WeatherViewModel weatherViewModel;
     private EditText cityEditText;
-    private Button searchButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cityEditText = findViewById(R.id.cityEditText);
-        searchButton = findViewById(R.id.searchButton);
+        Button searchButton = findViewById(R.id.searchButton);
 
         WeatherRepository weatherRepository = new WeatherRepositoryImpl();
         GetWeatherDataUseCase getWeatherDataUseCase = new GetWeatherDataUseCase(weatherRepository);
@@ -39,15 +37,12 @@ public class MainActivity extends AppCompatActivity {
         WeatherViewModelFactory factory = new WeatherViewModelFactory(getWeatherDataUseCase);
         weatherViewModel = new ViewModelProvider(this, factory).get(WeatherViewModel.class);
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String cityName = cityEditText.getText().toString().trim();
-                if (!cityName.isEmpty()) {
-                    weatherViewModel.fetchWeatherData(cityName);
-                } else {
-                    Toast.makeText(MainActivity.this, "Please enter a city name", Toast.LENGTH_SHORT).show();
-                }
+        searchButton.setOnClickListener(v -> {
+            String cityName = cityEditText.getText().toString().trim();
+            if (!cityName.isEmpty()) {
+                weatherViewModel.fetchWeatherData(cityName);
+            } else {
+                Toast.makeText(MainActivity.this, "Please enter a city name", Toast.LENGTH_SHORT).show();
             }
         });
 
