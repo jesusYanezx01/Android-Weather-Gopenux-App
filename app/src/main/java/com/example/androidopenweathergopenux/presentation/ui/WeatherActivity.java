@@ -1,10 +1,8 @@
 package com.example.androidopenweathergopenux.presentation.ui;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.androidopenweathergopenux.R;
 
