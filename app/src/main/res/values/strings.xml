@@ -3,4 +3,12 @@
     <string name="temperature">%s°C</string>
     <string name="feels_like">%s°C</string>
     <string name="humidity">%s%%</string>
+    <string name="feelsLike_label">Sensacion termica</string>
+    <string name="humidity_label">Humedad</string>
+    <string name="_00">00%</string>
+    <string name="_00_c">00°C</string>
+    <string name="nameCity_label">Nombre Ciudad</string>
+    <string name="weather_label">Clima</string>
+    <string name="searchCity_label">Buscar ciudad</string>
+    <string name="search_label">Buscar</string>
 </resources>
