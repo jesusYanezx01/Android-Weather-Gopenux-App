@@ -10,7 +10,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cityNameTextView"
-        android:layout_width="220dp"
+        android:layout_width="300dp"
         android:layout_height="35dp"
         android:text="@string/nameCity_label"
         android:textColor="@android:color/white"
